@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27.01.2016, 16:59:02
+    Author     : Bauer
+*/
+
+.BACKGROUND {
+    background-color: #009edf;
+    color:#FFFFFF;
+}
+
+.TABLEHEADER {
+    font-size: 30px;
+    font-family: Arial;
+    text-align: center;
+    font-weight: bold;
+}
+
+.TABLEROW {
+    font-size: 18px;
+    font-family: Arial;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 12px;
+}
+
+.TABLEROWFIRST {
+    font-size: 18px;
+    font-family: Arial;
+    text-align: center;
+    font-weight: bold;
+}
+.BUTTON{
+    font-size: 18px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.LOGOUT{
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: red;
+    position: absolute;
+    right: 300px;
+}

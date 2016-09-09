@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Absolventen Daten</title>
+        <h:outputStylesheet name="css/styles.css"  />
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        </link>
+    </h:head>
+
+
+    <h:body>
+        <h:form id="logoutform">
+            <h:commandButton class="LOGOUT" value="Logout" action="login" />
+        </h:form>
+        <div class="container">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#meineDaten">Meine Daten</a></li>
+                <li><a data-toggle="tab" href="#klassenlisteDrucken">Klassenliste drucken</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="meineDaten" class="tab-pane fade in active">
+                    <h3>Meine Daten</h3>
+                    <h:form id="meineDatenForm">
+                        <h:panelGrid columns="2" border="0" class="TABLEROW" width="90" >
+                            <h:outputText value="Vorname" class="TABLEROWFIRST"/>
+                            <h:inputText value="#{absolventBean.absolvent.vorname}"/>
+
+                            <h:outputText value="Nachname:" class="TABLEROWFIRST"/>
+                            <h:inputText value="#{absolventBean.absolvent.nachname}"/>
+
+                            <h:outputText value="Sozialversicherungsnummer:" class="TABLEROWFIRST"/>
+                            <h:inputText value="#{absolventBean.absolvent.svNr}"/>
+
+                            <h:outputText value="Geschlecht:" class="TABLEROWFIRST"/>
+                            <h:selectOneMenu value="#{absolventBean.absolvent.geschlecht}">
+                                <f:selectItem itemValue="true" itemLabel="Männlich"/>
+                                <f:selectItem itemValue="false" itemLabel="Weiblich"/>
+                            </h:selectOneMenu>
+
+                            <h:outputText value="&nbsp; "/>
+                            <h:outputText value="&nbsp; "/>
+
+                            <h:outputText value="PLZ:" class="TABLEROWFIRST"/>
+                            <h:inputText value=""/>
+
+                            <h:outputText value="Ort:" class="TABLEROWFIRST"/>
+                            <h:inputText value=""/>
+
+                            <h:outputText value="Straße:" class="TABLEROWFIRST"/>
+                            <h:inputText value="#{absolventBean.absolvent.straße}"/>
+
+                            <h:outputText value="&nbsp; "/>
+                            <h:outputText value="&nbsp; "/>
+
+                            <h:outputText value="E-Mail:" class="TABLEROWFIRST"/>
+                            <h:inputText value="#{absolventBean.absolvent.EMail}"/>
+
+                            <h:outputText value="Telefonnummer:" class="TABLEROWFIRST"/>
+                            <h:inputText value="#{absolventBean.absolvent.telefonNr}"/>
+
+                            <h:outputText value="&nbsp; "/>
+                            <h:outputText value="&nbsp; "/>
+
+                            <h:outputText value="Firma:" class="TABLEROWFIRST"/>
+                            <h:inputText value="#{absolventBean.absolvent.firma}"/>
+
+                            <h:outputText value="&nbsp; "/>
+                            <h:outputText value="&nbsp; "/>
+
+                            <h:outputText value="Newsletter abonnieren:" class="TABLEROWFIRST"/>
+                            <h:selectBooleanCheckbox value="#{absolventBean.absolvent.newsletter}"/>
+
+                            <h:outputText value="Jobangebot zusenden:" class="TABLEROWFIRST"/>
+                            <h:selectBooleanCheckbox value="#{absolventBean.absolvent.jobangebot}"/>
+
+                            <h:outputText value="Daten für gleichen Jahrgang veröffentlichen:" class="TABLEROWFIRST"/>
+                            <h:selectBooleanCheckbox value="#{absolventBean.absolvent.datenVeröffentlichen}"/>
+
+
+                        </h:panelGrid>
+                        <h:form>
+                            <h:commandButton value="Daten ändern" class="BUTTON" />
+                        </h:form>
+
+                    </h:form>
+                </div>
+
+                <div id="klassenlisteDrucken" class="tab-pane fade">
+                    <h:panelGrid columns="2" border="0" class="TABLEROW" width="90">
+                        <h:form id="klassenlisteForm" >
+                            <h:selectManyListbox value='#{absolventBean.absolventList}'/>      
+                        </h:form>
+                        <h:form >
+                        <h:commandButton value="Daten drucken" class="BUTTON"/>
+                        </h:form>
+                    </h:panelGrid>
+                </div>
+
+            </div>
+        </div>
+    </h:body>
+</html>
