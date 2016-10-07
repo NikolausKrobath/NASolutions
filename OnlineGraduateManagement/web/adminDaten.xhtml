@@ -15,40 +15,47 @@
 
     <h:body>
         <h:form id="logoutform">
-            <h:commandButton class="LOGOUT" value="Logout" />
+            <div class="col-sm-12">
+                <h:commandButton class="LOGOUT" value="Logout" />
+            </div>
         </h:form>
-
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#email">E-Mail</a></li>
-                <li><a data-toggle="tab" href="#klassenDrucken">Klassen drucken</a></li>
-                <li><a data-toggle="tab" href="#news">News</a></li>
-                <li><a data-toggle="tab" href="#klassenverwaltung" >Klassenverwaltung</a></li>
-            </ul>
-            <div class="tab-content">
-                <div id="email" class="tab-pane fade in active">
-                    <form id="emailform">
-                        <h:panelGrid columns="1" border="0" class="TABLEROW" width="90" >
-
-                            <h:panelGroup>
-                                <h:outputText value="Betreff:"/>
-                                <h:inputText size="65" value=""/>
-                            </h:panelGroup>
-
-                            <h:panelGroup>
-                                <h:outputText value="CC:"/>
-                                <h:inputText size="65" value=""/>
-                                <h:inputTextarea rows="10" cols="75"/>
-                            </h:panelGroup>
-
-                            <f:view>
-                                <h:outputText value="Klassentabelle"/>
-                            </f:view>
-                        </h:panelGrid>
-                    </form>
+        <h:form>
+            <div class="container col-sm-12">
+                <div class="tab-content col-sm-12">
+                    <div id="email" class="tab-pane fade in active">
+                        <form id="emailform">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-1">
+                                            <h:outputText value="Betreff:"/>       
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <h:inputText  value=""/>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <h:outputText value =" "/>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-1">
+                                            <h:outputText value="CC:"/>          
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <h:inputTextarea rows="10"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sal-6">
+                                    
+                                
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+        </h:form>
     </h:body>
 
 </html>

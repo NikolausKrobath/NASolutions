@@ -46,5 +46,6 @@ and open the template in the editor.
     color: black;
     background-color: red;
     position: absolute;
-    right: 300px;
+    right: 5px;
+    top: 5px;
 }
