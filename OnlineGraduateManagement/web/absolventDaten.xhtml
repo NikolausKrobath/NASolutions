@@ -80,8 +80,8 @@
                             <h:outputText value="Daten für gleichen Jahrgang veröffentlichen:" class="TABLEROWFIRST"/>
                             <h:selectBooleanCheckbox value="#{absolventBean.absolvent.datenVeröffentlichen}"/>
                         </h:panelGrid>
-
-                        <h:commandButton value="Daten ändern" class="BUTTON" />
+                        
+                        <p:commandButton value="Daten ändern" class="BUTTON" />
                     </h:form>
                 </p:tab>
 
@@ -91,7 +91,7 @@
                     <h:panelGrid columns="2" border="0" class="TABLEROW" width="90">
                         <h:form id="klassenlisteForm" >
                             <h:selectManyListbox value='#{absolventBean.absolventList}'/>      
-                            <h:commandButton value="Daten drucken" class="BUTTON"/>
+                            <p:commandButton value="Daten drucken" class="BUTTON"/>
                         </h:form>
                     </h:panelGrid>
                 </p:tab>
