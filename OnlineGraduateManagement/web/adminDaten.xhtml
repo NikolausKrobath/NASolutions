@@ -49,13 +49,11 @@
                                 <div class="col-sal-6">
 
                                     <h:dataTable value="#{adminViewBean.constructionList}" var="con" cellspacing="2">
-                                        <f:facet name="header">
-                                            <h:outputText value="Construction"/>
-                                        </f:facet>
+                                        
 
                                         <h:column>
                                             <f:facet name="header">
-                                                <h:outputText value="Construction ID"/>
+                                                <h:outputText value=""/>
                                             </f:facet>
                                             <h:outputText value="#{con.constructionID}"/>
                                         </h:column>
