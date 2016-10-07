@@ -19,14 +19,10 @@
         <h:form id="logoutform">
             <h:commandButton class="LOGOUT" value="Logout" action="login" />
         </h:form>
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#meineDaten">Meine Daten</a></li>
-                <li><a data-toggle="tab" href="#klassenlisteDrucken">Klassenliste drucken</a></li>
-            </ul>
 
-            <div class="tab-content">
-                <div id="meineDaten" class="tab-pane fade in active">
+        <h:form>
+            <p:tabView>
+                <p:tab title="Meine Daten">
                     <h3>Meine Daten</h3>
                     <h:form id="meineDatenForm">
                         <h:panelGrid columns="2" border="0" class="TABLEROW" width="90" >
@@ -83,28 +79,24 @@
 
                             <h:outputText value="Daten für gleichen Jahrgang veröffentlichen:" class="TABLEROWFIRST"/>
                             <h:selectBooleanCheckbox value="#{absolventBean.absolvent.datenVeröffentlichen}"/>
-
-
                         </h:panelGrid>
-                        <h:form>
-                            <h:commandButton value="Daten ändern" class="BUTTON" />
-                        </h:form>
 
+                        <h:commandButton value="Daten ändern" class="BUTTON" />
                     </h:form>
-                </div>
+                </p:tab>
 
-                <div id="klassenlisteDrucken" class="tab-pane fade">
+
+                <p:tab title="Klassenliste drucken">
+
                     <h:panelGrid columns="2" border="0" class="TABLEROW" width="90">
                         <h:form id="klassenlisteForm" >
                             <h:selectManyListbox value='#{absolventBean.absolventList}'/>      
+                            <h:commandButton value="Daten drucken" class="BUTTON"/>
                         </h:form>
-                        <h:form >
-                        <h:commandButton value="Daten drucken" class="BUTTON"/>
-                        </h:form>
-                    </h:panelGrid>
-                </div>
+                </p:tab>
+            </p:tabView>
+        </h:form>
 
-            </div>
         </div>
     </h:body>
 </html>
