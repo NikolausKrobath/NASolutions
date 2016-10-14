@@ -22,57 +22,57 @@
         <p:tabView>
             <p:tab title="E-Mail">
                 <h:form>
-                    <div class="container col-sm-12">
-                        <div class="tab-content col-sm-12">
-                            <div id="email" class="tab-pane fade in active">
-                                <form id="emailform">
-                                    <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <div class="col-sm-12">
-                                                <div class="col-sm-1">
-                                                    <h:outputText value="Betreff:"/>       
-                                                </div>
-                                                <div class="col-sm-7">
-                                                    <h:inputText  value=""/>
-                                                </div>
-                                                <div class="col-sm-4">
-                                                    <h:outputText value =" "/>
-                                                </div>
+                    <div class=" col-sm-12">
+                        <div class="col-sm-12">
+                            <form>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-1">
+                                                <h:outputText value="Betreff:"/>       
                                             </div>
-                                            <div class="col-sm-12">
-                                                <div class="col-sm-1">
-                                                    <h:outputText value="CC:"/>          
-                                                </div>
-                                                <div class="col-sm-7">
-                                                    <h:inputTextarea rows="10"/>
-                                                </div>
+                                            <div class="col-sm-7">
+                                                <h:inputText  value=""/>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <h:outputText value =" "/>
                                             </div>
                                         </div>
-                                        <div class="col-sal-6">
-
-                                            <h:dataTable value="#{adminViewBean.constructionList}" var="con" cellspacing="2">
-
-
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        <h:outputText value=""/>
-                                                    </f:facet>
-                                                    <h:outputText value="#{con.constructionID}"/>
-                                                </h:column>
-
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        <h:outputText value="Construction Name"/>
-                                                    </f:facet>
-                                                    <h:outputText value="#{con.constructionName}"/>
-                                                </h:column>
-                                            </h:dataTable>
+                                        <div class="col-sm-12">
+                                            <div class="col-sm-1">
+                                                <h:outputText value="CC:"/>          
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <h:inputTextarea rows="10"/>
+                                            </div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                                <div class="col-sal-6">
+
+                                    <h:dataTable value="#{adminBean.jList}" var="j" cellspacing="2">
+
+
+                                        <h:column>
+                                            <f:facet name="header">
+                                                <h:outputText value="Jahrgang"/>
+                                            </f:facet>
+                                            <h:outputText value="#{j.jahrgang}"/>
+                                        </h:column>
+
+                                        <h:column rendered="">
+                                            <f:facet name="header">
+                                                <h:outputText value=""/>
+                                            </f:facet>
+
+                                        </h:column>
+                                    </h:dataTable>
+                                </div>
                         </div>
+                        </form>
                     </div>
+                    </div>
+
                 </h:form>
             </p:tab>
 
@@ -83,6 +83,7 @@
             <p:tab title="Verwaltung">
 
             </p:tab>
+
         </p:tabView>
     </h:body>
 
