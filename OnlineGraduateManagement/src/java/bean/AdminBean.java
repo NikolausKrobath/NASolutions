@@ -30,6 +30,12 @@ public class AdminBean {
     public AdminBean() {
         jList = service.getjList();
         kList = service.getjList().get(0).getKlassenliste();
+        kList.add(new Klassen(1,"5AHIF","2016/17"));
+        kList.add(new Klassen(2,"3AHIF","2015/16"));
+        kList.add(new Klassen(3,"4AHIF","2016/17"));
+        jList.add(new Jahrgang("Jahrgang 2016/17"));
+        jList.get(0).setkList(kList);
+        
     }
     
     

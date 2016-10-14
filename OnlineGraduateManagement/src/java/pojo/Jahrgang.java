@@ -20,6 +20,8 @@ public class Jahrgang {
     public Jahrgang(String jahrgang) {
         this.jahrgang = jahrgang;
     }
+    
+    
 
     public Jahrgang() {
     }
