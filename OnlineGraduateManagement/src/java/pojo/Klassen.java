@@ -11,8 +11,8 @@ package pojo;
  */
 public class Klassen implements Identifiable{
     private int klassenID;
-    private String bezeichnung;
-    private String abschlussjahr;
+    private String bezeichnung; //4AHIF
+    private String abschlussjahr; //2017
 
     public Klassen(int klassenID, String bezeichnung, String abschlussjahr) {
         this.klassenID = klassenID;

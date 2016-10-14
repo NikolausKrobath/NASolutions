@@ -19,6 +19,8 @@ import pojo.Jahrgang;
 @SessionScoped
 public class Service {
     List<Jahrgang> jList = new ArrayList<>();
+    
+    
 
     public List<Jahrgang> getjList() {
         return jList;

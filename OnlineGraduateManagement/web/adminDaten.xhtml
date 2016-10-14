@@ -22,56 +22,78 @@
         <p:tabView>
             <p:tab title="E-Mail">
                 <h:form>
-                    <div class=" col-sm-12">
-                        <div class="col-sm-12">
-                            <form>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <div class="col-sm-1">
-                                                <h:outputText value="Betreff:"/>       
+                    <form>
+                        <div class=" col-sm-12">
+                            <div class="col-sm-12">
+                                <form>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-1">
+                                                    <h:outputText value="Betreff:"/>       
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <h:inputText  value=""/>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <h:outputText value =" "/>
+                                                </div>
                                             </div>
-                                            <div class="col-sm-7">
-                                                <h:inputText  value=""/>
-                                            </div>
-                                            <div class="col-sm-4">
-                                                <h:outputText value =" "/>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="col-sm-1">
-                                                <h:outputText value="CC:"/>          
-                                            </div>
-                                            <div class="col-sm-7">
-                                                <h:inputTextarea rows="10"/>
+                                            <div class="col-sm-12">
+                                                <div class="col-sm-1">
+                                                    <h:outputText value="CC:"/>          
+                                                </div>
+                                                <div class="col-sm-7">
+                                                    <h:inputTextarea rows="10"/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-sal-6">
+                                    <div class="col-sal-6">
 
-                                    <h:dataTable value="#{adminBean.jList}" var="j" cellspacing="2">
+                                        <h:dataTable value="#{adminBean.jList}" var="j" cellspacing="2">
 
 
-                                        <h:column>
-                                            <f:facet name="header">
-                                                <h:outputText value="Jahrgang"/>
-                                            </f:facet>
-                                            <h:outputText value="#{j.jahrgang}"/>
-                                        </h:column>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    <h:outputText value=""/>
+                                                </f:facet>
+                                                <h:outputText value="#{j.jahrgang}"/>
+                                            </h:column>
 
-                                        <h:column rendered="">
-                                            <f:facet name="header">
-                                                <h:outputText value=""/>
-                                            </f:facet>
+                                            <h:column>
+                                                <f:facet name="header">
+                                                    
+                                                    <p:selectBooleanCheckbox onchange="#{adminBean.selectedJahrgang}" value="false"></p:selectBooleanCheckbox>
+                                                </f:facet>
+                                            </h:column>
 
-                                        </h:column>
-                                    </h:dataTable>
-                                </div>
-                        </div>
-                        </form>
+                                            <h:dataTable value="#{adminBean.jList.kList}" var="k" cellspacing="2" rendered="#{adminBean.isSelected(j.jahrgang)}">
+                                                <h:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value=""/>
+                                                    </f:facet>
+                                                    <h:outputText value="Klasse: #{k.bezeichnung}"/>
+                                                </h:column>
+
+                                                <h:column>
+                                                    <f:facet name="header">
+                                                        <p:selectBooleanCheckbox onchange="#{adminBean.selectedKlasse}" value="false"></p:selectBooleanCheckbox>
+                                                    </f:facet>
+                                                </h:column>
+                                            </h:dataTable>
+                                        </h:dataTable>
+                                        
+                                        <p:selectBooleanCheckbox onchange="#{adminBean.selectedAll}" value="false"></p:selectBooleanCheckbox>
+                                    </div>
+                                    </form>
+                            </div>
+                            
+                    
+
                     </div>
-                    </div>
+
+                    </form>
 
                 </h:form>
             </p:tab>
