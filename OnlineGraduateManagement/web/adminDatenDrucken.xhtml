@@ -24,16 +24,56 @@ and open the template in the editor.
                 <h:commandButton class="LOGOUT" value="Logout" />
             </div>
         </h:form>
-        
+
         <h:form>
-            <div class="col-sm-12">
-                <div class="col-sal-6 form-group">
-                    
+            <div class=" col-sm-12">
+                <div class="form-group">
+                    <h:form>
+                        <div class="col-sm-6 TABLEROWFIRST">
+                            <h:panelGrid columns="2" border="0" class="TABLEROW" width="90" >
+                            <h:outputText value="SVNr" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX Right"/>
+
+
+                            <h:outputText value="Vorname:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+
+                            <h:outputText value="Nachname:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                            <h:outputText value="Geschlecht:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                            <h:outputText value="Telefon:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                            
+                            <h:outputText value="E-Mail:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                            
+                            <h:outputText value="beschäftigt bei:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                            
+                            <h:outputText value="PLZ:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                            
+                            <h:outputText value="Straße/Hausnummer:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                            
+                            <h:outputText value="Ort:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                            
+                            <h:outputText value="Alle auswählen:" class="TABLEROWFIRST"/>
+                            <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                            </h:panelGrid>
+                        </div>
+
+                        <div class="col-sm-6">
+                        </div>
+                    </h:form>
                 </div>
-                
-                
             </div>
-            
+            <p:commandButton value="Drucken"/>
         </h:form>
     </h:body>
 </html>

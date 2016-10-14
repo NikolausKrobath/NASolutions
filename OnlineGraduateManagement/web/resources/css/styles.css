@@ -13,6 +13,18 @@ and open the template in the editor.
     color:#FFFFFF;
 }
 
+.CHECKBOX {
+    size: 18px;
+}
+
+.Right{
+    float: right;
+}
+
+.DISTANCE {
+    size: 10px;
+}
+
 .TABLEHEADER {
     font-size: 30px;
     font-family: Arial;
