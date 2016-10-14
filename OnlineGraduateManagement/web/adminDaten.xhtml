@@ -49,21 +49,21 @@
                                         </div>
                                         <div class="col-sal-6">
 
-                                            <h:dataTable value="#{adminViewBean.constructionList}" var="con" cellspacing="2">
+                                            <h:dataTable value="#{adminBean.jList}" var="j" cellspacing="2">
 
 
                                                 <h:column>
+                                                    <f:facet name="header">
+                                                        <h:outputText value="Jahrgang"/>
+                                                    </f:facet>
+                                                    <h:outputText value="#{j.jahrgang}"/>
+                                                </h:column>
+
+                                                <h:column rendered="">
                                                     <f:facet name="header">
                                                         <h:outputText value=""/>
                                                     </f:facet>
-                                                    <h:outputText value="#{con.constructionID}"/>
-                                                </h:column>
-
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        <h:outputText value="Construction Name"/>
-                                                    </f:facet>
-                                                    <h:outputText value="#{con.constructionName}"/>
+                                                    
                                                 </h:column>
                                             </h:dataTable>
                                         </div>
