@@ -54,12 +54,12 @@
                                         <h:dataTable value="#{adminBean.jList}" var="j" cellspacing="2">
                                             <h:column>
                                                 <f:facet name="header">
-                                                    <h:outputText value="#{j.jahrgang}"/>
+                                                    <h:outputText value="Jahr:"/>
                                                 </f:facet>
-                                              <h:outputText value="#{j.jahrgang}"/>
+                                                <h:outputText value="#{j.jahrgang}"/>
                                             </h:column>
 
-                                            <h:column>
+                                          <!--  <h:column>
                                                 <f:facet name="header">
                                                     <p:selectBooleanCheckbox onchange="#{adminBean.selectedJahrgang}" value="false"></p:selectBooleanCheckbox>
                                                 </f:facet>
@@ -79,8 +79,9 @@
                                                     </f:facet>
                                                 </h:column>
                                             </h:dataTable>
+                                          -->
                                         </h:dataTable>
-
+                                        <h:outputText value="Select all"/>
                                         <p:selectBooleanCheckbox onchange="#{adminBean.selectedAll}" value="false"></p:selectBooleanCheckbox>
                                     </div>
                                 </h:form>

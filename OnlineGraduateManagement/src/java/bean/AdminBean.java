@@ -28,7 +28,8 @@ public class AdminBean {
     List<Jahrgang> jList = new ArrayList<>();
 
     public AdminBean() {
-        jList = service.getjList();
+        jList.add(new Jahrgang("2016/17"));
+      /*  jList = service.getjList();
         jList.add(new Jahrgang("Jahrgang 2016/17"));
         kList = service.getjList().get(0).getkList();
         kList.add(new Klasse(1,"5AHIF","2016/17"));
@@ -36,7 +37,7 @@ public class AdminBean {
         kList.add(new Klasse(3,"4AHIF","2016/17"));
         
         jList.get(0).setkList(kList);
-        
+        */
     }
 
     public Service getService() {

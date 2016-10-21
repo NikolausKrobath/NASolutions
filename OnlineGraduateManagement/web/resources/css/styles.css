@@ -8,10 +8,6 @@ and open the template in the editor.
     Author     : Bauer
 */
 
-.BACKGROUND {
-    background-color: #009edf;
-    color:#FFFFFF;
-}
 
 .CHECKBOX {
     size: 18px;
@@ -40,6 +36,11 @@ and open the template in the editor.
     border-spacing: 12px;
 }
 
+.LOGIN{
+      font-size: 18px;
+    font-family: Arial;
+       font-weight: bold;
+}
 .TABLEROWFIRST {
     font-size: 18px;
     font-family: Arial;
