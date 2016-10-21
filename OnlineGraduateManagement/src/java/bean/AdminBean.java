@@ -37,6 +37,30 @@ public class AdminBean {
         jList.get(0).setkList(kList);
         
     }
+
+    public Service getService() {
+        return service;
+    }
+
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+    public List<Klassen> getkList() {
+        return kList;
+    }
+
+    public void setkList(List<Klassen> kList) {
+        this.kList = kList;
+    }
+
+    public List<Jahrgang> getjList() {
+        return jList;
+    }
+
+    public void setjList(List<Jahrgang> jList) {
+        this.jList = jList;
+    }
     
     
     

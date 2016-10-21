@@ -22,10 +22,10 @@
         <p:tabView>
             <p:tab title="E-Mail">
                 <h:form>
-                    <form>
+                    <h:form>
                         <div class=" col-sm-12">
                             <div class="col-sm-12">
-                                <form>
+                                <h:form>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <div class="col-sm-12">
@@ -52,18 +52,14 @@
                                     <div class="col-sal-6">
 
                                         <h:dataTable value="#{adminBean.jList}" var="j" cellspacing="2">
-
-
                                             <h:column>
                                                 <f:facet name="header">
-                                                    <h:outputText value=""/>
+                                                    <h:outputText value="#{j.jahrgang}"/>
                                                 </f:facet>
-                                                <h:outputText value="#{j.jahrgang}"/>
                                             </h:column>
 
                                             <h:column>
                                                 <f:facet name="header">
-                                                    
                                                     <p:selectBooleanCheckbox onchange="#{adminBean.selectedJahrgang}" value="false"></p:selectBooleanCheckbox>
                                                 </f:facet>
                                             </h:column>
@@ -83,30 +79,96 @@
                                                 </h:column>
                                             </h:dataTable>
                                         </h:dataTable>
-                                        
+
                                         <p:selectBooleanCheckbox onchange="#{adminBean.selectedAll}" value="false"></p:selectBooleanCheckbox>
                                     </div>
-                                    </form>
+                                </h:form>
                             </div>
-                            
-                    
-
-                    </div>
-
-                    </form>
-
+                        </div>
+                    </h:form>
                 </h:form>
             </p:tab>
 
             <p:tab title="Klassen drucken">
+                <h:form>
+                    <div class=" col-sm-12">
+                        <div class="form-group">
+                            <h:form>
+                                <div class="col-sm-6 TABLEROWFIRST">
+                                    <h:panelGrid columns="2" border="0" class="TABLEROW" width="90" >
+                                        <h:outputText value="SVNr" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX Right"/>
 
+
+                                        <h:outputText value="Vorname:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+
+                                        <h:outputText value="Nachname:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                                        <h:outputText value="Geschlecht:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                                        <h:outputText value="Telefon:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                                        <h:outputText value="E-Mail:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                                        <h:outputText value="beschäftigt bei:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                                        <h:outputText value="PLZ:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                                        <h:outputText value="Straße/Hausnummer:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                                        <h:outputText value="Ort:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+
+                                        <h:outputText value="Alle auswählen:" class="TABLEROWFIRST"/>
+                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                    </h:panelGrid>
+                                </div>
+
+                                <div class="col-sm-6">
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                    <h:panelGrid columns="2" border="0" class="TABLEROW" width="90" >
+                        <br  />
+                        <p:commandButton value="Drucken"/>
+                    </h:panelGrid>
+                </h:form>
             </p:tab>
 
             <p:tab title="Verwaltung">
-
+                <h:form>
+                    <div class=" col-sm-12">
+                        <div class="form-group">
+                            <h:form>
+                                <div class="col-sm-6">
+                                    <h:panelGrid columns="1" border="0" width="90" >
+                                        <p:commandButton value="Klasse hinzufügen" class="DISTANCE"/>
+                                        <p:commandButton value="Jahrgang hinzufügen"/>
+                                        <br  />
+                                        <p:commandButton value="Daten bearbeiten" class="DISTANCE"/>
+                                        <p:commandButton value="Löschen"/>
+                                        <br />
+                                        <p:commandButton value="Datenbank exportieren" class="DISTANCE"/>
+                                        <p:commandButton value="Datenbank importieren"/>
+                                    </h:panelGrid>
+                                </div>
+                                <div class="col-sm-6">
+                                </div>
+                            </h:form>
+                        </div>
+                    </div>
+                </h:form>
             </p:tab>
-
         </p:tabView>
     </h:body>
-
 </html>
