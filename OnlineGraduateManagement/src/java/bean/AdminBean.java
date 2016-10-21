@@ -62,6 +62,5 @@ public class AdminBean {
         this.jList = jList;
     }
     
-    
-    
+
 }
