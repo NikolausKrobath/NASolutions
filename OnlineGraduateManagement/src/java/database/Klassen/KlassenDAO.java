@@ -6,12 +6,12 @@
 package database.Klassen;
 
 import database.DAO;
-import pojo.Klassen;
+import pojo.Klasse;
 
 /**
  *
  * @author Bauer
  */
-public interface KlassenDAO extends DAO<Klassen>{
+public interface KlassenDAO extends DAO<Klasse>{
     
 }

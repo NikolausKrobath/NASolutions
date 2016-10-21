@@ -9,12 +9,12 @@ package pojo;
  *
  * @author Bauer
  */
-public class Klassen implements Identifiable{
+public class Klasse implements Identifiable{
     private int klassenID;
     private String bezeichnung; //4AHIF
     private String abschlussjahr; //2017
 
-    public Klassen(int klassenID, String bezeichnung, String abschlussjahr) {
+    public Klasse (int klassenID, String bezeichnung, String abschlussjahr) {
         this.klassenID = klassenID;
         this.bezeichnung = bezeichnung;
         this.abschlussjahr = abschlussjahr;

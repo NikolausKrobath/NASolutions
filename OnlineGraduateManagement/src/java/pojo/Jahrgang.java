@@ -14,7 +14,7 @@ import java.util.List;
  * @author Nikolaus
  */
 public class Jahrgang {
-    List<Klassen> kList = new ArrayList<>();
+    List<Klasse> kList = new ArrayList<>();
     String jahrgang;
 
     public Jahrgang(String jahrgang) {
@@ -26,11 +26,11 @@ public class Jahrgang {
     public Jahrgang() {
     }
 
-    public List<Klassen> getkList() {
+    public List<Klasse> getkList() {
         return kList;
     }
 
-    public void setkList(List<Klassen> kList) {
+    public void setkList(List<Klasse> kList){
         this.kList = kList;
     }
 
@@ -42,19 +42,15 @@ public class Jahrgang {
         this.jahrgang = jahrgang;
     }
     
-    public Klassen getKlasse(int id){
+    public Klasse getKlasse(int id){
         return kList.get(id);
     }
     
-    public List<Klassen> getKlassenliste(){
-        return kList;
-    }
-    
-    public void addKlassenListe(List<Klassen> kList){
+    public void addKlassenListe(List<Klasse> kList){
         this.kList = kList;
     }
     
-    public void addKlasse(Klassen k){
-        this.kList.add(k);
+    public void addKlasse(Klasse k){
+            this.kList.add(k);
     }
 }

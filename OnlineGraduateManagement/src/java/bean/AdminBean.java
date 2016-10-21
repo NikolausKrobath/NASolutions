@@ -11,7 +11,7 @@ import javax.annotation.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import pojo.Jahrgang;
-import pojo.Klassen;
+import pojo.Klasse;
 import service.Service;
 
 /**
@@ -24,16 +24,17 @@ public class AdminBean {
     @ManagedProperty(value = "#{service}")
     private Service service;
     
-    List<Klassen> kList = new ArrayList<>();
+    List<Klasse> kList = new ArrayList<>();
     List<Jahrgang> jList = new ArrayList<>();
 
     public AdminBean() {
         jList = service.getjList();
-        kList = service.getjList().get(0).getKlassenliste();
-        kList.add(new Klassen(1,"5AHIF","2016/17"));
-        kList.add(new Klassen(2,"3AHIF","2015/16"));
-        kList.add(new Klassen(3,"4AHIF","2016/17"));
         jList.add(new Jahrgang("Jahrgang 2016/17"));
+        kList = service.getjList().get(0).getkList();
+        kList.add(new Klasse(1,"5AHIF","2016/17"));
+        kList.add(new Klasse(2,"3AHIF","2015/16"));
+        kList.add(new Klasse(3,"4AHIF","2016/17"));
+        
         jList.get(0).setkList(kList);
         
     }
@@ -46,11 +47,11 @@ public class AdminBean {
         this.service = service;
     }
 
-    public List<Klassen> getkList() {
+    public List<Klasse> getkList() {
         return kList;
     }
 
-    public void setkList(List<Klassen> kList) {
+    public void setkList(List<Klasse> kList) {
         this.kList = kList;
     }
 

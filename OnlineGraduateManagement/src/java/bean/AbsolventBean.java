@@ -19,7 +19,7 @@ import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.servlet.http.HttpSession;
 import pojo.Absolvent;
-import pojo.Klassen;
+import pojo.Klasse;
 
 /**
  *
