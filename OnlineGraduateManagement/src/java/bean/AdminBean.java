@@ -37,7 +37,5 @@ public class AdminBean {
         jList.get(0).setkList(kList);
         
     }
-    
-    
-    
+
 }
