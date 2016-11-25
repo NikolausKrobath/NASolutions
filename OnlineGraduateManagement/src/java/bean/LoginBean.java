@@ -68,6 +68,7 @@ public class LoginBean {
         //prüfen auf die 15 minuten
         autoCode = (int) (Math.random() * 10000000);
         System.out.println(autoCode);
+        //SendEMail email=new SendEMail();
     }
     
     public void showMessage(){
@@ -76,6 +77,4 @@ public class LoginBean {
         options.put("modal", true);
         RequestContext.getCurrentInstance().openDialog("Sozialversicherungsnummer",options, null);
     }
-    
-    
 }
