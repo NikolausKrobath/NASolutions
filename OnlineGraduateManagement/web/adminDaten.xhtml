@@ -59,27 +59,27 @@
                                                 <h:outputText value="#{j.jahrgang}"/>
                                             </h:column>
 
-                                          <!--  <h:column>
-                                                <f:facet name="header">
-                                                    <p:selectBooleanCheckbox onchange="#{adminBean.selectedJahrgang}" value="false"></p:selectBooleanCheckbox>
-                                                </f:facet>
-                                            </h:column>
-
-                                            <h:dataTable value="#{adminBean.jList.kList}" var="k" cellspacing="2" rendered="#{adminBean.isSelected(j.jahrgang)}">
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        <h:outputText value=""/>
-                                                    </f:facet>
-                                                    <h:outputText value="Klasse: #{k.bezeichnung}"/>
-                                                </h:column>
-
-                                                <h:column>
-                                                    <f:facet name="header">
-                                                        <p:selectBooleanCheckbox onchange="#{adminBean.selectedKlasse}" value="false"></p:selectBooleanCheckbox>
-                                                    </f:facet>
-                                                </h:column>
-                                            </h:dataTable>
-                                          -->
+                                            <!--  <h:column>
+                                                  <f:facet name="header">
+                                                      <p:selectBooleanCheckbox onchange="#{adminBean.selectedJahrgang}" value="false"></p:selectBooleanCheckbox>
+                                                  </f:facet>
+                                              </h:column>
+  
+                                              <h:dataTable value="#{adminBean.jList.kList}" var="k" cellspacing="2" rendered="#{adminBean.isSelected(j.jahrgang)}">
+                                                  <h:column>
+                                                      <f:facet name="header">
+                                                          <h:outputText value=""/>
+                                                      </f:facet>
+                                                      <h:outputText value="Klasse: #{k.bezeichnung}"/>
+                                                  </h:column>
+  
+                                                  <h:column>
+                                                      <f:facet name="header">
+                                                          <p:selectBooleanCheckbox onchange="#{adminBean.selectedKlasse}" value="false"></p:selectBooleanCheckbox>
+                                                      </f:facet>
+                                                  </h:column>
+                                              </h:dataTable>
+                                            -->
                                         </h:dataTable>
                                         <h:outputText value="Select all"/>
                                         <p:selectBooleanCheckbox onchange="#{adminBean.selectedAll}" value="false"></p:selectBooleanCheckbox>
@@ -154,16 +154,76 @@
                             <h:form>
                                 <div class="col-sm-6">
                                     <h:panelGrid columns="1" border="0" width="90" >
-                                        <p:commandButton value="Klasse hinzufügen" class="DISTANCE"/>
-                                        <p:commandButton value="Jahrgang hinzufügen"/>
+                                        <p:commandButton value="Absolvent hinzufügen" class="DISTANCE" onclick="PF('absolvent').show();"/>
+                                        <p:commandButton value="Klasse hinzufügen" class="DISTANCE" onclick="PF('klasse').show();"/>
+                                        <p:commandButton value="Jahrgang hinzufügen" onclick="PF('jahrgang').show();"/>
                                         <br  />
-                                        <p:commandButton value="Daten bearbeiten" class="DISTANCE"/>
-                                        <p:commandButton value="Löschen"/>
+                                        <p:commandButton value="Daten bearbeiten" class="DISTANCE" onclick="PF('daten').show();"/>
+                                        <p:commandButton value="Löschen" onclick="PF('löschen').show();"/>
                                         <br />
-                                        <p:commandButton value="Datenbank exportieren" class="DISTANCE"/>
-                                        <p:commandButton value="Datenbank importieren"/>
+                                        <p:commandButton value="Klasse exportieren" class="DISTANCE" onclick="PF('ex').show();"/>
+                                        <p:commandButton value="Klasse importieren" onclick="PF('im').show();"/>
                                     </h:panelGrid>
                                 </div>
+                                 <p:dialog header="Klasse exportieren" widgetVar="ex" modal="true" height="100">
+                                    <h:panelGrid columns="2" border="0" width="90" >
+                                        <h:outputText value="Klasse"/>
+                                        <h:inputText value="#{popUpBean.Klasse.bezeichnung}"/>
+                                        <h:outputText value="Jahrgang"/>
+                                        <h:inputText value="#{popUpBean.Klasse.abschlussjahr}"/>
+                                        <h:commandButton value="exportieren" onchange="#{popUpBean.klasseExportieren}"/>
+                                    </h:panelGrid>
+                                </p:dialog>
+                                
+                                <p:dialog header="Klasse importieren" widgetVar="im" modal="true" height="100">
+                                    <h:panelGrid columns="2" border="0" width="90" >
+                                        <h:outputText value="Bezeichnung"/>
+                                        <h:inputText value="#{popUpBean.Klasse.bezeichnung}"/>
+                                        <h:outputText value="Abschlussjahr"/>
+                                        <h:inputText value="#{popUpBean.Klasse.abschlussjahr}"/>
+                                        <h:commandButton value="hinzufügen" onchange="#{popUpBean.klasseImporieren}"/>
+                                    </h:panelGrid>
+                                </p:dialog>   
+                                
+                                <p:dialog header="Klasse Hinzufügen" widgetVar="klasse" modal="true" height="100">
+                                    <h:panelGrid columns="2" border="0" width="90" >
+                                        <h:outputText value="Bezeichnung"/>
+                                        <h:inputText value="#{popUpBean.Klasse.bezeichnung}"/>
+                                        <h:outputText value="Abschlussjahr"/>
+                                        <h:inputText value="#{popUpBean.Klasse.abschlussjahr}"/>
+                                        <h:commandButton value="hinzufügen" onchange="#{popUpBean.klasseHinzufügen}"/>
+                                    </h:panelGrid>
+                                </p:dialog>   
+
+                                <p:dialog header="Jahrgang Hinzufügen" widgetVar="jahrgang" modal="true" height="100">
+                                    <h:panelGrid columns="2" border="0" width="90" >
+                                        <h:outputText value="Jahrgang"/>
+                                        <h:inputText value="#{popUpBean.Jahrgang.jahrgang}"/>
+                                    </h:panelGrid>
+                                    <h:commandButton value="hinzufügen" onchange="#{popUpBean.jahrgangHinzufügen}"/>
+                                </p:dialog>
+
+                                <p:dialog header="Absolvent Hinzufügen" widgetVar="absolvent" modal="true" height="100">
+                                    <h:panelGrid columns="2" border="0" width="90" >
+                                        <h:outputText value="SVR"/>
+                                        <h:inputText value="#{popUpBean.Absolvent.svr}"/>
+                                        <h:outputText value="Nachname"/>
+                                        <h:inputText value="#{popUpBean.Absolvent.nachname}"/>
+                                        <h:outputText value="Vorname"/>
+                                        <h:inputText value="#{popUpBean.Absolvent.vorname}"/>
+                                        <h:outputText value="E-Mail"/>
+                                        <h:inputText value="#{popUpBean.Absolvent.EMail}"/>
+                                    </h:panelGrid>
+                                    <h:commandButton value="hinzufügen" onchange="#{popUpBean.jahrgangHinzufügen}"/>
+                                </p:dialog>
+
+                                <p:dialog header="Daten bearbeiten" widgetVar="daten" modal="true" height="100">
+                                    <h:commandButton value="bearbeiten" onchange="#{popUpBean.datenBearbeiten}"/>
+                                </p:dialog>
+
+                                <p:dialog header="Löschen" widgetVar="löschen" modal="true" height="100">
+                                    <h:commandButton value="bearbeiten" onchange="#{popUpBean.datenBearbeiten}"/>
+                                </p:dialog>
                                 <div class="col-sm-6">
                                 </div>
                             </h:form>
