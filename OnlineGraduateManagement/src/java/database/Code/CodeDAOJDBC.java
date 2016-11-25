@@ -13,12 +13,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import pojo.Code;
 
 /**
  *
  * @author Bauer
  */
+@ManagedBean
+@SessionScoped
 public class CodeDAOJDBC extends JDBCBaseDAO<Code> implements CodeDAO{
 
     public CodeDAOJDBC(String tablename, String id) {

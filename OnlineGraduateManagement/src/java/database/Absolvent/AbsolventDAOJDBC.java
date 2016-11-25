@@ -10,12 +10,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import pojo.Absolvent;
 
 /**
  *
  * @author Bauer
  */
+@ManagedBean
+@SessionScoped
 public class AbsolventDAOJDBC extends JDBCBaseDAO<Absolvent> implements AbsolventDAO {
 
     public AbsolventDAOJDBC(String tablename, String id) {

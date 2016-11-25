@@ -11,6 +11,7 @@ import java.util.List;
 import javax.annotation.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import pojo.Absolvent;
 import pojo.Jahrgang;
 import pojo.Klasse;
 import service.Service;
@@ -25,13 +26,43 @@ public class PopUpBean {
     @ManagedProperty(value = "#{service}")
     private Service service;
     
-    Klasse k;
-    Jahrgang j;
+    Absolvent absolvent;
+    Klasse klasse;
+    Jahrgang jahrgang;
     List<Klasse> kList = new ArrayList<Klasse>();
     
     public PopUpBean(){
         
     }
+    
+    public void klasseExportieren(){
+        
+    }
+    
+    public void klasseImportieren(){
+        
+    }
+    
+    public void klasseHinzufügen(){
+        
+    }
+    
+    public void jahrgangHinzufügen(){
+        
+    }
+    
+    public void absolventHinzufügen(){
+        
+    }
+    
+    public void datenBearbeiten(){
+        
+    }
+    
+    public void datenLöschen(){
+        
+    }
+    
 
     public Service getService() {
         return service;
@@ -41,21 +72,31 @@ public class PopUpBean {
         this.service = service;
     }
 
-    public Klasse getK() {
-        return k;
+    public Absolvent getAbsolvent() {
+        return absolvent;
     }
 
-    public void setK(Klasse k) {
-        this.k = k;
+    public void setAbsolvent(Absolvent absolvent) {
+        this.absolvent = absolvent;
     }
 
-    public Jahrgang getJ() {
-        return j;
+    public Klasse getKlasse() {
+        return klasse;
     }
 
-    public void setJ(Jahrgang j) {
-        this.j = j;
+    public void setKlasse(Klasse klasse) {
+        this.klasse = klasse;
     }
+
+    public Jahrgang getJahrgang() {
+        return jahrgang;
+    }
+
+    public void setJahrgang(Jahrgang jahrgang) {
+        this.jahrgang = jahrgang;
+    }
+    
+    
 
     public List<Klasse> getkList() {
         return kList;

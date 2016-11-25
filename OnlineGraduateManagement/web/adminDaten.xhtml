@@ -99,39 +99,39 @@
                                 <div class="col-sm-6 TABLEROWFIRST">
                                     <h:panelGrid columns="2" border="0" class="TABLEROW" width="90" >
                                         <h:outputText value="SVNr" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX Right"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.svnrB}" class="CHECKBOX Right"/>
 
 
                                         <h:outputText value="Vorname:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.vornameB}" class="CHECKBOX"/>
 
 
                                         <h:outputText value="Nachname:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.nachnameB}" class="CHECKBOX"/>
 
                                         <h:outputText value="Geschlecht:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.geschlechtB}" class="CHECKBOX"/>
 
                                         <h:outputText value="Telefon:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.telefonB}" class="CHECKBOX"/>
 
                                         <h:outputText value="E-Mail:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.eMailB}" class="CHECKBOX"/>
 
                                         <h:outputText value="beschäftigt bei:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.beschäftigtB}" class="CHECKBOX"/>
 
                                         <h:outputText value="PLZ:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.plzB}" class="CHECKBOX"/>
 
                                         <h:outputText value="Straße/Hausnummer:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.straßeB}" class="CHECKBOX"/>
 
                                         <h:outputText value="Ort:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.ortB}" class="CHECKBOX"/>
 
                                         <h:outputText value="Alle auswählen:" class="TABLEROWFIRST"/>
-                                        <p:selectBooleanCheckbox value="" class="CHECKBOX"/>
+                                        <p:selectBooleanCheckbox value="#{adminBean.all}" class="CHECKBOX"/>
                                     </h:panelGrid>
                                 </div>
 
@@ -142,8 +142,10 @@
                     </div>
                     <h:panelGrid columns="2" border="0" class="TABLEROW" width="90" >
                         <br  />
-                        <p:commandButton value="Drucken"/>
+                        <p:commandButton value="Exportieren" actionListener="#{adminBean.exportieren}"/>
                     </h:panelGrid>
+
+    
                 </h:form>
             </p:tab>
 
@@ -165,32 +167,32 @@
                                         <p:commandButton value="Klasse importieren" onclick="PF('im').show();"/>
                                     </h:panelGrid>
                                 </div>
-                                 <p:dialog header="Klasse exportieren" widgetVar="ex" modal="true" height="100">
+                                <p:dialog header="Klasse exportieren" widgetVar="ex" modal="true" height="100">
                                     <h:panelGrid columns="2" border="0" width="90" >
                                         <h:outputText value="Klasse"/>
-                                        <h:inputText value="#{popUpBean.Klasse.bezeichnung}"/>
+                                        <h:inputText value="#{popUpBean.klasse.bezeichnung}"/>
                                         <h:outputText value="Jahrgang"/>
-                                        <h:inputText value="#{popUpBean.Klasse.abschlussjahr}"/>
+                                        <h:inputText value="#{popUpBean.klasse.abschlussjahr}"/>
                                         <h:commandButton value="exportieren" onchange="#{popUpBean.klasseExportieren}"/>
                                     </h:panelGrid>
                                 </p:dialog>
-                                
+
                                 <p:dialog header="Klasse importieren" widgetVar="im" modal="true" height="100">
                                     <h:panelGrid columns="2" border="0" width="90" >
                                         <h:outputText value="Bezeichnung"/>
-                                        <h:inputText value="#{popUpBean.Klasse.bezeichnung}"/>
+                                        <h:inputText value="#{popUpBean.klasse.bezeichnung}"/>
                                         <h:outputText value="Abschlussjahr"/>
-                                        <h:inputText value="#{popUpBean.Klasse.abschlussjahr}"/>
+                                        <h:inputText value="#{popUpBean.klasse.abschlussjahr}"/>
                                         <h:commandButton value="hinzufügen" onchange="#{popUpBean.klasseImporieren}"/>
                                     </h:panelGrid>
                                 </p:dialog>   
-                                
+
                                 <p:dialog header="Klasse Hinzufügen" widgetVar="klasse" modal="true" height="100">
                                     <h:panelGrid columns="2" border="0" width="90" >
                                         <h:outputText value="Bezeichnung"/>
-                                        <h:inputText value="#{popUpBean.Klasse.bezeichnung}"/>
+                                        <h:inputText value="#{popUpBean.klasse.bezeichnung}"/>
                                         <h:outputText value="Abschlussjahr"/>
-                                        <h:inputText value="#{popUpBean.Klasse.abschlussjahr}"/>
+                                        <h:inputText value="#{popUpBean.klasse.abschlussjahr}"/>
                                         <h:commandButton value="hinzufügen" onchange="#{popUpBean.klasseHinzufügen}"/>
                                     </h:panelGrid>
                                 </p:dialog>   
@@ -198,7 +200,7 @@
                                 <p:dialog header="Jahrgang Hinzufügen" widgetVar="jahrgang" modal="true" height="100">
                                     <h:panelGrid columns="2" border="0" width="90" >
                                         <h:outputText value="Jahrgang"/>
-                                        <h:inputText value="#{popUpBean.Jahrgang.jahrgang}"/>
+                                        <h:inputText value="#{popUpBean.jahrgang.jahrgang}"/>
                                     </h:panelGrid>
                                     <h:commandButton value="hinzufügen" onchange="#{popUpBean.jahrgangHinzufügen}"/>
                                 </p:dialog>
@@ -206,15 +208,15 @@
                                 <p:dialog header="Absolvent Hinzufügen" widgetVar="absolvent" modal="true" height="100">
                                     <h:panelGrid columns="2" border="0" width="90" >
                                         <h:outputText value="SVR"/>
-                                        <h:inputText value="#{popUpBean.Absolvent.svr}"/>
+                                        <h:inputText value="#{popUpBean.absolvent.svr}"/>
                                         <h:outputText value="Nachname"/>
-                                        <h:inputText value="#{popUpBean.Absolvent.nachname}"/>
+                                        <h:inputText value="#{popUpBean.absolvent.nachname}"/>
                                         <h:outputText value="Vorname"/>
-                                        <h:inputText value="#{popUpBean.Absolvent.vorname}"/>
+                                        <h:inputText value="#{popUpBean.absolvent.vorname}"/>
                                         <h:outputText value="E-Mail"/>
-                                        <h:inputText value="#{popUpBean.Absolvent.EMail}"/>
+                                        <h:inputText value="#{popUpBean.absolvent.EMail}"/>
                                     </h:panelGrid>
-                                    <h:commandButton value="hinzufügen" onchange="#{popUpBean.jahrgangHinzufügen}"/>
+                                    <h:commandButton value="hinzufügen" onchange="#{popUpBean.absolventHinzufügen}"/>
                                 </p:dialog>
 
                                 <p:dialog header="Daten bearbeiten" widgetVar="daten" modal="true" height="100">
@@ -222,7 +224,7 @@
                                 </p:dialog>
 
                                 <p:dialog header="Löschen" widgetVar="löschen" modal="true" height="100">
-                                    <h:commandButton value="bearbeiten" onchange="#{popUpBean.datenBearbeiten}"/>
+                                    <h:commandButton value="bearbeiten" onchange="#{popUpBean.datenLöschen}"/>
                                 </p:dialog>
                                 <div class="col-sm-6">
                                 </div>
