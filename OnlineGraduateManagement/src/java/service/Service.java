@@ -15,6 +15,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import pojo.Absolvent;
+import pojo.Code;
 import pojo.Jahrgang;
 import pojo.Klasse;
 
@@ -39,6 +40,12 @@ public class Service {
     public Service() {
     }
     
+    public void exAbsolvent(Absolvent a){
+        
+    }
+    
+    
+    
     public void addKlasse(Klasse k) throws SQLException{
         klasseDAO.insert(k);
     }
@@ -51,8 +58,12 @@ public class Service {
         klasseDAO.delete(k);
     }
     
-    public Klasse getKlasse(int i){
-        return null;
+    public Klasse getKlasse(int i) throws SQLException{
+        return klasseDAO.select(i);
+    }
+    
+    public List<Klasse> getAllKlasse() throws SQLException{
+        return klasseDAO.selectAll();
     }
     
     
@@ -68,10 +79,34 @@ public class Service {
         absolventDAO.delete(a);
     }
     
-    public Absolvent getAbsolvent(int i){
-        return null;
+    public Absolvent getAbsolvent(int i) throws SQLException{
+        return absolventDAO.select(i);
     }
     
+    public List<Absolvent> getAllAbsolvent() throws SQLException{
+        return absolventDAO.selectAll();
+    }
+    
+    
+    public void addCode(Code a) throws SQLException{
+        codeDAO.insert(a);
+    }
+    
+    public void updateCode(Code a) throws SQLException{
+        codeDAO.update(a);
+    }
+    
+    public void deleteCode(Code a) throws SQLException{
+        codeDAO.delete(a);
+    }
+    
+    public Code getCode(int i) throws SQLException{
+        return codeDAO.select(i);
+    }
+    
+    public List<Code> getAllCode() throws SQLException{
+        return codeDAO.selectAll();
+    }
     
 
     public List<Jahrgang> getjList() {

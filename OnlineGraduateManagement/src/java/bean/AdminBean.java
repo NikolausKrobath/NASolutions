@@ -10,6 +10,7 @@ import java.util.List;
 import javax.annotation.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import pojo.Absolvent;
 import pojo.Jahrgang;
 import pojo.Klasse;
 import service.Service;
@@ -26,6 +27,19 @@ public class AdminBean {
     
     List<Klasse> kList = new ArrayList<>();
     List<Jahrgang> jList = new ArrayList<>();
+    List<Boolean> bList = new ArrayList<>();
+    
+     boolean svnrB;
+     boolean vornameB;
+     boolean nachnameB;
+     boolean geschlechtB;
+     boolean telefonB;
+     boolean eMailB;
+     boolean beschäftigtB;
+     boolean plzB;
+     boolean straßeB;
+     boolean ortB;
+     boolean all;
 
     public AdminBean() {
         jList.add(new Jahrgang("2016/17"));
@@ -39,6 +53,18 @@ public class AdminBean {
         jList.get(0).setkList(kList);
         */
     }
+    
+    
+    public void exportieren(){
+        Absolvent a = null;
+        if(all==true){
+            service.exAbsolvent(a);
+        }else if(svnr)
+    }
+    
+    
+    
+    
 
     public Service getService() {
         return service;
@@ -63,6 +89,98 @@ public class AdminBean {
     public void setjList(List<Jahrgang> jList) {
         this.jList = jList;
     }
+
+    public boolean isSvnrB() {
+        return svnrB;
+    }
+
+    public void setSvnrB(boolean svnrB) {
+        this.svnrB = svnrB;
+    }
+
+    public boolean isVornameB() {
+        return vornameB;
+    }
+
+    public void setVornameB(boolean vornameB) {
+        this.vornameB = vornameB;
+    }
+
+    public boolean isNachnameB() {
+        return nachnameB;
+    }
+
+    public void setNachnameB(boolean nachnameB) {
+        this.nachnameB = nachnameB;
+    }
+
+    public boolean isGeschlechtB() {
+        return geschlechtB;
+    }
+
+    public void setGeschlechtB(boolean geschlechtB) {
+        this.geschlechtB = geschlechtB;
+    }
+
+    public boolean isTelefonB() {
+        return telefonB;
+    }
+
+    public void setTelefonB(boolean telefonB) {
+        this.telefonB = telefonB;
+    }
+
+    public boolean iseMailB() {
+        return eMailB;
+    }
+
+    public void seteMailB(boolean eMailB) {
+        this.eMailB = eMailB;
+    }
+
+    public boolean isBeschäftigtB() {
+        return beschäftigtB;
+    }
+
+    public void setBeschäftigtB(boolean beschäftigtB) {
+        this.beschäftigtB = beschäftigtB;
+    }
+
+    public boolean isPlzB() {
+        return plzB;
+    }
+
+    public void setPlzB(boolean plzB) {
+        this.plzB = plzB;
+    }
+
+    public boolean isStraßeB() {
+        return straßeB;
+    }
+
+    public void setStraßeB(boolean straßeB) {
+        this.straßeB = straßeB;
+    }
+
+    public boolean isOrtB() {
+        return ortB;
+    }
+
+    public void setOrtB(boolean ortB) {
+        this.ortB = ortB;
+    }
+
+    public boolean isAll() {
+        return all;
+    }
+
+    public void setAll(boolean all) {
+        this.all = all;
+    }
+
+   
+    
+    
     
 
 }
