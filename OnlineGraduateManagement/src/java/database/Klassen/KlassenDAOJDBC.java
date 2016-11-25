@@ -10,12 +10,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import pojo.Klasse;
 
 /**
  *
  * @author Bauer
  */
+@ManagedBean
+@SessionScoped
 public class KlassenDAOJDBC extends JDBCBaseDAO<Klasse> implements KlassenDAO {
 
     public KlassenDAOJDBC(String tablename, String id) {
